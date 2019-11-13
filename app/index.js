@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import LandingPage from './components/LandingPage'
 
 class App extends React.Component {
   render() {
     return (
-      <h1>Live!!!</h1>
+      <LandingPage />
     )
   }
 }

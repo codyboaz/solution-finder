@@ -1,0 +1,359 @@
+{
+  "question": "What type of solution are you looking for?",
+  "node_depth": 5,
+  "layout": "four cards",
+  "answers": [
+    {
+      "answer": "Personal Wearable Communications",
+      "description": "Personal devices are meant to be used by one person. Whether you're an entrepreneur looking for a better way to communicate...",
+      "image_url": "/content/poly/.../img.png",
+      "next_question": {
+        "name": "Personal Wearable",
+        "question": "What type on environment will you use it in?",
+        "node_depth": 4,
+        "layout": "full screen",
+        "answers": [
+          {
+            "answer": "On the Go",
+            "image_url": "/content/poly/.../img.png"
+          },
+          {
+            "answer": "Open Office",
+            "image_url": "/content/poly/.../img.png"
+          },
+          {
+            "answer": "Home Office",
+            "image_url": "/content/poly/.../img.png",
+            "next_question": {
+              "name": "Home Office",
+              "question": "What type of device will you connect it to?",
+              "node_depth": 3,
+              "layout": "full screen",
+              "answers": [
+                {
+                  "answer": "Desk Phone",
+                  "image_url": "/content/poly/.../img.png"
+                },
+                {
+                  "answer": "PC & Mobile Phone",
+                  "image_url": "/content/poly/.../img.png",
+                  "next_question": {
+                    "name": "PC & Mobile Phone",
+                    "question": "Do you prefer wireless or corded?",
+                    "node_depth": 2,
+                    "layout": "full screen",
+                    "answers": [
+                      {
+                        "answer": "Wireless",
+                        "image_url": "/content/poly/.../img.png",
+                        "solutions": [
+                          {
+                            "name": "Wireless",
+                            "question": "Choose your solution",
+                            "node_depth": 1,
+                            "products": [
+                              {
+                                "recommended": true,
+                                "name": "Voyager 6200 UC",
+                                "price": "$745.99 - $945.99",
+                                "image_url": "/content/poly/.../img.png",
+                                "descriptor": "...",
+                                "description": "...",
+                                "data_sheet_url": "/content/poly/.../data.pdf",
+                                "bv_rating": 4,
+                                "pdp_url": "/content/poly/.../pdp.html",
+                                "includes": [],
+                                "related_products": [
+                                  {
+                                    "name": "Upgrades",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Accessories",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Compatible Products",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Similar Products",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "recommended": false,
+                                "name": "Voyager 5200 UC",
+                                "price": "$745.99 - $945.99",
+                                "image_url": "/content/poly/.../img.png",
+                                "descriptor": "Smart conference phone",
+                                "description": "Polycom Trio is the smartphone for your modern...",
+                                "data_sheet_url": "/content/poly/.../data.pdf",
+                                "bv_rating": 4,
+                                "pdp_url": "/content/poly/.../pdp.html",
+                                "includes": [],
+                                "related_products": [
+                                  {
+                                    "name": "Upgrades",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Accessories",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Compatible Products",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Similar Products",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "recommended": false,
+                                "name": "Realpresence Group 500",
+                                "price": "$745.99 - $945.99",
+                                "image_url": "/content/poly/.../img.png",
+                                "descriptor": "...",
+                                "description": "...",
+                                "data_sheet_url": "/content/poly/.../data.pdf",
+                                "bv_rating": 4,
+                                "pdp_url": "/content/poly/.../pdp.html",
+                                "includes": [
+                                  {
+                                    "name": "Realpresence group 500 codec",
+                                    "pdp_url": "/content/poly/.../pdp.html"
+                                  },
+                                  {
+                                    "name": "Eagleeye IV camera",
+                                    "pdp_url": "/content/poly/.../pdp.html"
+                                  },
+                                  {
+                                    "name": "Microphone array",
+                                    "pdp_url": "/content/poly/.../pdp.html"
+                                  },
+                                  {
+                                    "name": "Cable Bundle",
+                                    "pdp_url": "/content/poly/.../pdp.html"
+                                  },
+                                  {
+                                    "name": "Remote Control",
+                                    "pdp_url": "/content/poly/.../pdp.html"
+                                  }
+                                ],
+                                "related_products": [
+                                  {
+                                    "name": "Upgrades",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Accessories",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Compatible Products",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Similar Products",
+                                    "products": [
+                                      {
+                                        "name": "Eagleeye Cube",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      },
+                                      {
+                                        "name": "Eagleeye 12X",
+                                        "image_url": "/content/poly/.../img.png",
+                                        "price": "$745.99 - $945.99",
+                                        "pdp_url": "/content/poly/.../pdp.html"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "answer": "Corded",
+                        "image_url": "/content/poly/.../img.png"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "answer": "Contact Center",
+            "image_url": "/content/poly/.../img.png"
+          }
+        ]
+      }
+    },
+    {
+      "answer": "Personal Desktop Communications",
+      "description": "...",
+      "image_url": "/content/poly/.../img.png"
+    },
+    {
+      "answer": "Group Audio Communications",
+      "description": "...",
+      "image_url": "/content/poly/.../img.png"
+    },
+    {
+      "answer": "Group Video Communications",
+      "description": "...",
+      "image_url": "/content/poly/.../img.png"
+    }
+  ]
+}
