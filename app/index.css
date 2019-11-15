@@ -1,0 +1,56 @@
+html, body, * {
+  font-family: ff-good-web-pro, Arial, sans-serif;
+}
+.container {
+  padding: 20px;
+  max-width: 1200px;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.question-number {
+  color: #EB3300;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 65px;
+}
+
+.header {
+  line-height: 2;
+}
+
+.card-holder {
+  display: flex;
+}
+
+.card-holder li {
+  list-style: none;
+}
+
+.card-holder img {
+  width: 300px;
+  height: 300px;
+}
+
+.card-holder button {
+  width: 300px;
+  height: 150px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: underline;
+  background: #EDEDED ;
+  padding: 5px;
+}
+
+.card-holder button:hover {
+  background: #E3E3E3 ;
+}
+
