@@ -1,5 +1,5 @@
-import React from "react";
-import { getData } from "../utils/api";
+import React from 'react';
+import { getData } from '../utils/api';
 import { Line } from 'rc-progress'
 
 function ProgressBar({ progress }) {
@@ -8,21 +8,80 @@ function ProgressBar({ progress }) {
   )
 }
 
+
+class FullScreen extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      imgUrl: null
+    }
+  }
+  componentDidMount() {
+    this.setState({
+      imgUrl: this.props.data.answers[0].imageUrl
+    })
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.data.answers[0].imageUrl !== this.props.data.answers[0].imageUrl) {
+      this.setState({
+        imgUrl: this.props.data.answers[0].imageUrl
+      })
+    }
+  }
+
+  handleMouseOver(url) {
+    this.setState({
+      imgUrl: url
+    })
+  }
+
+  render() {
+    const { question, answers } = this.props.data
+    const handleAnswer = this.props.handleAnswer
+    return (
+      <div>
+        <div className='header'>
+          <span className='question-number'>{`0${this.props.questionNumber}`}</span>
+          <h1>{question}</h1>
+        </div>
+
+        <img src={this.state.imgUrl} className='fullscreen-img' />
+        <ul className='card-holder'>
+          {answers &&
+            answers.map(answer => (
+              <li key={answer.answer}>
+                <button
+                  className='center-text'
+                  onClick={handleAnswer}
+                  onMouseOver={() => this.handleMouseOver(answer.imageUrl)}
+                  onFocus={() => this.handleMouseOver(answer.imageUrl)}
+                >
+                  {answer.answer}
+                </button>
+              </li>
+            )
+            )}
+        </ul>
+      </div>
+    )
+  }
+
+}
+
 class Solutions extends React.Component {
   constructor(props) {
     super(props)
   }
 
   render() {
-    const { name, question, nodeDepth, products } = this.props.data
+    const { question, products } = this.props.data
     return (
       <React.Fragment>
         <h1>{question}</h1>
-        <h2>{name}</h2>
-        <h2>{nodeDepth}</h2>
         <ul>
           {products.map((product) => (
-            <li>
+            <li key={product.name}>
               {product.recommended && (
                 <h6>Recommended</h6>
               )}
@@ -48,11 +107,7 @@ class FourCards extends React.Component {
 
   render() {
 
-    if (this.props.data === null) {
-      return <h1>loading</h1>
-    }
-
-    const { question, name, answers } = this.props.data
+    const { question, answers } = this.props.data
 
     const handleAnswer = this.props.handleAnswer
     return (
@@ -62,9 +117,6 @@ class FourCards extends React.Component {
           <h1>{question}</h1>
         </div>
 
-        {name && (
-          <h2>{name}</h2>
-        )}
         <ul className='card-holder'>
           {answers &&
             answers.map(answer => (
@@ -73,7 +125,7 @@ class FourCards extends React.Component {
                   <img src={answer.imageUrl} alt='' />
                 )}
                 <p>{answer.description}</p>
-                <button onClick={handleAnswer}>{answer.answer}</button>
+                <button className='left-text' onClick={handleAnswer}>{answer.answer}</button>
               </li>
             )
             )}
@@ -89,6 +141,7 @@ export default class LandingPage extends React.Component {
 
     this.state = {
       error: null,
+      loading: true,
       solutions: null,
       progress: 0,
       questionNumber: 1,
@@ -100,9 +153,12 @@ export default class LandingPage extends React.Component {
   componentDidMount() {
     getData()
       .then((data) => {
-        this.setState({
-          data
-        });
+        setTimeout(() => {
+          this.setState({
+            data,
+            loading: false
+          });
+        }, 1000)
       })
       .catch((error) => {
         this.setState({
@@ -115,14 +171,12 @@ export default class LandingPage extends React.Component {
     let nextStep = null
     let solutions = null
     const answer = event.target.innerText.toLowerCase();
-    console.log(answer)
     answers.forEach((answer) => {
-      if (answer.solutions) {
-        nextStep = answer.solutions
+      if (answer.products) {
+        nextStep = answer
         solutions = true
       } else if (answer.answer === event.target.innerText.toLowerCase()) {
-        console.log('yes!')
-        nextStep = answer.nextQuestion
+        nextStep = answer
       }
     })
     let progress = (this.state.data.nodeDepth / 4) * 100
@@ -135,10 +189,12 @@ export default class LandingPage extends React.Component {
     })
   }
   render() {
+    if (this.state.loading) {
+      return <h1>Loading...</h1>
+    }
     if (this.state.error) {
       return <h1>{this.state.error}</h1>;
     }
-
     if (this.state.solutions) {
       return (
         <div className='container'>
@@ -147,12 +203,23 @@ export default class LandingPage extends React.Component {
         </div>
       )
     }
-    return (
-      <div className='container'>
-        <ProgressBar progress={this.state.progress} />
-        <FourCards data={this.state.data} handleAnswer={this.handleAnswer} questionNumber={this.state.questionNumber} />
-      </div>
-    )
+    if (this.state.data.layout === 'fourCards') {
+      return (
+        <div className='container'>
+          <ProgressBar progress={this.state.progress} />
+          <FourCards data={this.state.data} handleAnswer={this.handleAnswer} questionNumber={this.state.questionNumber} />
+        </div>
+      )
+    }
+    if (this.state.data.layout === 'fullScreen') {
+      return (
+        <div className='container'>
+          <ProgressBar progress={this.state.progress} />
+          <FullScreen data={this.state.data} handleAnswer={this.handleAnswer} questionNumber={this.state.questionNumber} />
+        </div>
+      )
+    }
+
   }
 }
 
