@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import LandingPage from './components/LandingPage'
+import Container from './components/Container'
 import './index.css'
 
 class App extends React.Component {
   render() {
     return (
-      <LandingPage />
+      <Container />
     )
   }
 }
