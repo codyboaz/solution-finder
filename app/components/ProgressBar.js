@@ -1,22 +1,27 @@
 import React from 'react';
 import { Line } from 'rc-progress'
 
-export default function ProgressBar({ progress, answers }) {
-  console.log("answers", answers)
-  return (
 
+export default function ProgressBar({ progress, answers }) {
+  const styles = {
+    answers: {
+      maxWidth: answers ? `${(answers.length / 4) * 100}%` : null
+    }
+  }
+  return (
     <div>
       <Line percent={progress} strokeWidth='1' strokeColor='#EB3300' trailWidth='0.25' trailColor='#000' />
-      {answers && (
-        <ul className="answers">
-          {answers.map((answer) => (
-            <li key={answer}>
-              {answer}
-            </li>
-          ))}
-        </ul>
-      )}
+      {
+        answers && (
+          <ul className="answers" style={styles.answers}>
+            {answers.map((answer) => (
+              <li key={answer}>
+                {answer}
+              </li>
+            ))}
+          </ul>
+        )
+      }
     </div>
-
   )
 }

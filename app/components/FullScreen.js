@@ -29,9 +29,10 @@ export default class FullScreen extends React.Component {
   }
   render() {
     const { question, answers } = this.props.data
-    const handleAnswer = this.props.handleAnswer
+    const { handleAnswer } = this.props
     return (
       <div>
+        {this.props.children}
         <div className='header'>
           <span className='question-number'>{`0${this.props.questionNumber}`}</span>
           <h1>{question}</h1>

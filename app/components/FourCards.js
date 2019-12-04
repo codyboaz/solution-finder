@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function FourCards({ data, handleAnswer, questionNumber }) {
   const { question, answers } = data
+
   return (
     <div>
       <div className='header'>
