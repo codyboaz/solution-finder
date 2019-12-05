@@ -11,18 +11,15 @@ export default class Solutions extends React.Component {
     return (
       <React.Fragment>
         {this.props.children}
-        <div className='header'>
+        <div className='header solution'>
           <span className='question-number'>{`0${this.props.questionNumber}`}</span>
           <h1>{question}</h1>
         </div>
         <ul className='solutions'>
           {products.map((product) => (
-            <li
-              key={product.name}
-              className='solution-item'
-            >
-              <SolutionCard product={product} />
-            </li>
+
+            <SolutionCard key={product.name} product={product} />
+
           ))}
         </ul>
       </React.Fragment>
@@ -38,14 +35,19 @@ class SolutionCard extends React.Component {
       hovering: false
     }
 
-    this.handleHover = this.handleHover.bind(this)
+    this.handleMouseEnter = this.handleMouseEnter.bind(this)
+    this.handleMouseLeave = this.handleMouseLeave.bind(this)
   }
 
-  handleHover() {
-    this.setState(({ hovering }) => {
-      return {
-        hovering: !hovering
-      }
+  handleMouseEnter() {
+    this.setState({
+      hovering: true
+    })
+  }
+
+  handleMouseLeave() {
+    this.setState({
+      hovering: false
     })
   }
 
@@ -53,31 +55,36 @@ class SolutionCard extends React.Component {
     const { product } = this.props
 
     return (
-      <div
-        onMouseEnter={this.handleHover}
-        onMouseLeave={this.handleHover}
+      <li
+
+        className='solution-item'
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+        onFocus={this.handleMouseEnter}
+        onBlur={this.handleMouseLeave}
       >
+
         {product.recommended && (
           <div className='recommended'>
             <p>Recommended</p>
           </div>
         )}
         <img src={product.imageUrl} />
-        <h3>{product.name}</h3>
-        <p>{product.price}</p>
+        <h3 className='solution-name'>{product.name}</h3>
+        <p className='solution-price'>{product.price}</p>
         <div className={this.state.hovering ? 'solution-slider' : 'solution-slider close'} >
           <h3>{product.name}</h3>
-          <a className='solution-compare' href='#'>Compare</a>
-          <p className='solution-price'>{product.price}</p>
-          <p className='solution-rating'>{product.bvRating}</p>
-          <p className='solution-descriptor'>{product.descriptor}</p>
-          <p className='solution-description'>{product.description}</p>
-          <div className='solution-btns'>
+          <a className='slider-compare' href='#'>Compare</a>
+          <p className='slider-price'>{product.price}</p>
+          <p className='slider-rating'>{product.bvRating}</p>
+          <p className='slider-descriptor'>{product.descriptor}</p>
+          <p className='slider-description'>{product.description}</p>
+          <div className='slider-btns'>
             <button className='lava-btn'>Select</button>
-            <a className='solution-ds' href='#'>Data Sheet</a>
+            <a className='slider-ds' href='#'>Data Sheet</a>
           </div>
         </div>
-      </div>
+      </li>
     )
   }
 }

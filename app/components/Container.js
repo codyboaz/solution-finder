@@ -276,7 +276,7 @@ export default class Container extends React.Component {
     this.state = {
       error: null,
       loading: true,
-      solutions: true,
+      solutions: false,
       progress: 0,
       questionNumber: 1,
       data: null,
@@ -331,12 +331,12 @@ export default class Container extends React.Component {
       return (
         <div className='container'>
           <ProgressBar
-            progress={100}
-            answers={["personal wearable communications", "home office", "pc & mobile phone", "wireless"]}
+            progress={this.state.progress}
+            answers={this.state.answers}
           />
           <Solutions
-            data={solutionData}
-            questionNumber={5}
+            data={this.state.data}
+            questionNumber={this.state.questionNumber}
           />
         </div>
       )

@@ -19,8 +19,6 @@ body {
 
 .header h1 {
   height: 75px;	
-  width: 218px;	
-  color: #000000;	
   font-size: 32px;	
   font-weight: 500;	
   letter-spacing: 0.4px;	
@@ -29,6 +27,14 @@ body {
   text-decoration: underline;
   margin-left: 20px;
   display: inline-block;
+}
+
+.header.solution h1 {
+  width: 218px;	
+}
+
+.header.question h1 {
+  width: 445px;	
 }
 
 .question-number {
@@ -53,27 +59,53 @@ body {
   flex: 1;
 }
 
-.card-holder img {
-  width: 300px;
-  height: 300px;
+.image-container {
+  width: 359px;
+  height: 539px;
+  overflow: hidden;
+  transform: translateY(-25px);
+  transition: all .3s;
+}
+
+.image-container.return {
+  transform: translateY(0);
+}
+
+.solution-slider {
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #e9e6e3;
+  transition: all .3s;
+}
+
+.solution-slider.close {
+  top: 100%;
+  height: 0;
+}
+
+.image-container img {
+  margin: 0% 0% 0% -70%;
 }
 
 .card-holder button {
-  width: 100%;
-  height: 150px;
-  font-size: 20px;
-  font-weight: 600;
   border: none;
   cursor: pointer;
   text-transform: uppercase;
   text-decoration: underline;
-  background: #EDEDED;
+  background: #fbfaf9;
   padding-left: 20px;
-  line-height: 1.35;
-}
-
-.card-holder button:hover {
-  background: #E3E3E3 ;
+  height: 60px;	
+  width: 275px;
+  margin-top: 27px;
+  font-size: 24px;	
+  font-weight: 500;	
+  line-height: 30px;	
+  text-shadow: 0px 0px 1px rgba(0,0,0,0.5);
 }
 
 .fullscreen-img {
@@ -118,11 +150,10 @@ body {
   background-color: #FFFFFF;
   position: relative;
   list-style: none;
-  width: 446px;
+  width: 465px;
   height: 619px;
   margin: 10px;
   text-align: center;
-  padding: 10px;
 }
 
 .solution-item img {
@@ -131,15 +162,28 @@ body {
   margin-top: 80px;
 }
 
-.solution-item p {
+.solution-item .solution-price {
   text-align: left;
+  margin: 0;
+  margin-left: 27px;
+  height: 34px;
+  font-family: "ff-good-web-pro", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
-.solution-item h3 {
+.solution-item .solution-name {
   text-transform: uppercase;
   text-decoration: underline;
-  font-weight: 700;
   text-align: left;
+  height: 41px;	
+  font-size: 32px;	
+  font-weight: 500;	
+  letter-spacing: 0.4px;	
+  line-height: 38px;
+  margin-bottom: 0;
+  margin-left: 27px;
 }
 
 .solution-item .recommended {
@@ -147,30 +191,33 @@ body {
   background: #FF3B00;
   margin: 0;
   top: 0;
-  left: 0;
+  left: 20px;
   font-weight: 400;
-  font-size: 14px;
   text-transform: uppercase;
-  padding: 2px;
+  height: 40px;
+  width: 106px;
 }
 
 .solution-item .recommended p {
   color: #fff;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
-  padding: 2px;
+  margin: 0;
+  text-align: center;
+  line-height: 40px;
 }
 
 .solution-slider {
   position: absolute;
+  text-align: left;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   overflow: hidden;
   background-color: #e9e6e3;
-  transition: all .45s;
+  transition: all .3s;
 }
 
 .solution-slider.close {
@@ -180,29 +227,32 @@ body {
 
 .solution-slider h3 {
   display: inline-block;
+  text-decoration: underline;
+  text-transform: uppercase;
   width: 78%;
-  height: 41px;
+  width: 275px;
   color: #000000;
   font-size: 32px;
   font-weight: 500;
   letter-spacing: 0.4px;
   line-height: 38px;
-  margin-left: 10px;
   margin: 0;
+  margin-left: 20px;
   margin-top: 40px;
 }
 
-.solution-slider .solution-compare {
-  height: 36px;
-  width: 22%;
+.solution-slider .slider-compare {
+  position: absolute;
   text-transform: uppercase;
   color: #000;
   font-size: 14px;
   font-weight: 500;
   font-family: "ff-good-web-pro", Arial, sans-serif;
+  right: 5%;
+  top: 7%;
 }
 
-.solution-slider .solution-price {
+.solution-slider .slider-price {
   font-size: 14px;
   line-height: 24px;
   margin: 0;
@@ -211,16 +261,16 @@ body {
   font-family: "ff-good-web-pro", Arial, sans-serif;
 }
 
-.solution-slider .solution-rating {
+.solution-slider .slider-rating {
   font-size: 14px;
   line-height: 24px;
   margin: 0;
   margin-left: 20px;
   margin-top: 5px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
-.solution-slider .solution-descriptor {
+.solution-slider .slider-descriptor {
   font-size: 20px;
   font-weight: 500;
   line-height: 22px;
@@ -232,7 +282,7 @@ body {
   font-family: "ff-good-web-pro", Arial, sans-serif;
 }
 
-.solution-slider .solution-description {
+.solution-slider .slider-description {
   font-size: 18px;
   line-height: 27px;
   font-weight: 300;
@@ -241,13 +291,13 @@ body {
   font-family: "ff-good-web-pro", Arial, sans-serif;
 }
 
-.solution-slider .solution-btns {
+.solution-slider .slider-btns {
   position: absolute;
   top: 90%;
   left: 0;
 }
 
-.solution-slider .solution-btns .lava-btn {
+.solution-slider .slider-btns .lava-btn {
   height: 37px;
   width: 135px;
   background-color: #FF3B00;
@@ -257,12 +307,13 @@ body {
   text-transform: uppercase;
   font-weight: 500;
   cursor: pointer;
+  border: none;
 }
 
-.solution-slider .solution-btns .solution-ds {
+.solution-slider .slider-btns .slider-ds {
   color: #000;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 
