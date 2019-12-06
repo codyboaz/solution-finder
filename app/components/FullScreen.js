@@ -46,7 +46,7 @@ export default class FullScreen extends React.Component {
               <li key={answer.answer}>
                 <button
                   className='center-text'
-                  onClick={handleAnswer}
+                  onClick={() => handleAnswer(answer.answer)}
                   onMouseOver={() => this.mouseOver(answer.imageUrl)}
                   onFocus={() => this.mouseOver(answer.imageUrl)}
                 >

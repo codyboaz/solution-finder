@@ -31,14 +31,19 @@ class Card extends React.Component {
       hovering: false
     }
 
-    this.handleHover = this.handleHover.bind(this)
+    this.handleMouseEnter = this.handleMouseEnter.bind(this)
+    this.handleMouseLeave = this.handleMouseLeave.bind(this)
   }
 
-  handleHover() {
-    this.setState(({ hovering }) => {
-      return {
-        hovering: !hovering
-      }
+  handleMouseEnter() {
+    this.setState({
+      hovering: true
+    })
+  }
+
+  handleMouseLeave() {
+    this.setState({
+      hovering: false
     })
   }
 
@@ -48,10 +53,10 @@ class Card extends React.Component {
     return (
       <li
         className='single-card'
-        onMouseEnter={this.handleHover}
-        onMouseLeave={this.handleHover}
-        onFocus={this.handleHover}
-        onBlur={this.handleHover}
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+        onFocus={this.handleMouseEnter}
+        onBlur={this.handleMouseLeave}
       >
         {answer.imageUrl && (
           <div className={this.state.hovering ? 'image-container' : 'image-container return'}>
@@ -60,13 +65,12 @@ class Card extends React.Component {
         )}
 
         <div className={this.state.hovering ? 'card-slider' : 'card-slider close'}>
-          {/* <div className='card-slider'> */}
           <div className='slider-content'>
-            <h2 onClick={handleAnswer}>
+            <h2>
               {answer.answer}
             </h2>
             <p>{answer.description}</p>
-            <button className='btn-lava'>Select</button>
+            <button className='btn-lava' onClick={() => handleAnswer(answer.answer)}>Select</button>
           </div>
 
         </div>

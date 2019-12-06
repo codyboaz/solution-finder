@@ -301,14 +301,14 @@ export default class Container extends React.Component {
         });
       });
   }
-  handleAnswer(event) {
+  handleAnswer(value) {
     let nextStep = null
     let solutions = null
     this.state.data.answers.forEach((answer) => {
       if (answer.products) {
         nextStep = answer
         solutions = true
-      } else if (answer.answer === event.target.innerText.toLowerCase()) {
+      } else if (answer.answer === value.toLowerCase()) {
         nextStep = answer
       }
     })
