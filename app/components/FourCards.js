@@ -58,13 +58,20 @@ class Card extends React.Component {
             <img src={answer.imageUrl} alt='' />
           </div>
         )}
-        <button
-          className='left-text'
-          onClick={handleAnswer}
-        >
-          {answer.answer}
-        </button>
-      </li>
+
+        <div className={this.state.hovering ? 'card-slider' : 'card-slider close'}>
+          {/* <div className='card-slider'> */}
+          <div className='slider-content'>
+            <h2 onClick={handleAnswer}>
+              {answer.answer}
+            </h2>
+            <p>{answer.description}</p>
+            <button className='btn-lava'>Select</button>
+          </div>
+
+        </div>
+
+      </li >
     )
   }
 }

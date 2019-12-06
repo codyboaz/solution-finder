@@ -37,9 +37,10 @@ export default class FullScreen extends React.Component {
           <span className='question-number'>{`0${this.props.questionNumber}`}</span>
           <h1>{question}</h1>
         </div>
-
-        <img src={this.state.imgUrl} className='fullscreen-img' />
-        <ul className='card-holder'>
+        <div className='fullscreen-img-wrapper'>
+          <img src={this.state.imgUrl} className='fullscreen-img' />
+        </div>
+        <ul className='fullscreen-btns'>
           {answers &&
             answers.map(answer => (
               <li key={answer.answer}>
