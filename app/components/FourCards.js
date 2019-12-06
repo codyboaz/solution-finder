@@ -4,7 +4,7 @@ export default function FourCards({ data, handleAnswer, questionNumber }) {
   const { question, answers } = data
 
   return (
-    <div>
+    <div className='four-cards'>
       <div className='header question'>
         <span className='question-number'>{`0${questionNumber}`}</span>
         <h1>{question}</h1>

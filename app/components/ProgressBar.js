@@ -9,8 +9,8 @@ export default function ProgressBar({ progress, answers }) {
     }
   }
   return (
-    <div>
-      <Line percent={progress} strokeWidth='1' strokeColor='#EB3300' trailWidth='0.25' trailColor='#000' />
+    <div className='progress-bar'>
+      <Line percent={progress} strokeWidth='.35' strokeColor='#EB3300' trailWidth='0.25' trailColor='#000' />
       {
         answers && (
           <ul className="answers" style={styles.answers}>
