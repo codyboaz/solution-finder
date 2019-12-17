@@ -13,9 +13,7 @@ export default function FourCards({ data, handleAnswer, questionNumber }) {
       <ul className='card-holder'>
         {answers &&
           answers.map(answer => (
-
             <Card key={answer.answer} answer={answer} handleAnswer={handleAnswer} />
-
           )
           )}
       </ul>

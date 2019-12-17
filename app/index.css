@@ -155,7 +155,7 @@ body {
   color: white;
   text-transform: uppercase;
   position: absolute;
-  top: 77%;
+  top: 85%;
   left: 23px;
   cursor: pointer;
 }
@@ -214,6 +214,14 @@ body {
   list-style: none;
   padding: 0;
   justify-content: space-between;
+}
+
+.answers li {
+  font-family: "ff-good-web-pro", Arial, sans-serif;
+  font-size: 16px;	
+  font-weight: 500;	
+  line-height: 22px;
+  text-transform: uppercase;
 }
 
 .answers li:not(last-child) {
@@ -418,6 +426,118 @@ body {
   right: 0;
   margin: auto;
 }
+
+.solution-body {
+  background-color: #e9e6e3;
+  height: 663px;
+  display: flex;
+}
+
+.solution-body .img-container {
+  flex-basis: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.solution-body .img-container img{
+  width: auto;
+  height: 573px;
+  margin: 45px 0;
+}
+
+.solution-body .detail-container {
+  flex-basis: 40%;
+  position: relative;
+}
+
+.solution-body .detail-container .solution-name {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  line-height: 38px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin: 55px 75px 0;
+}
+
+.solution-body .detail-container .solution-price {
+  font-family: "ff-good-web-pro", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 5px 75px;
+}
+
+.solution-body .detail-container .solution-rating {
+  font-family: "ff-good-web-pro", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0 75px;
+}
+
+.solution-body .detail-container .solution-descriptor {
+  font-family: "ff-good-web-pro", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+  text-transform: uppercase;
+  margin: 55px 0 10px 75px;
+  width: 390px;
+}
+
+.solution-body .detail-container .solution-description {
+  font-family: "ff-good-web-pro", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 300;
+  width: 390px;
+  margin: 0 0 90px 75px;
+}
+
+.solution-body .detail-container .btn-group {
+  margin-left: 75px;
+  position: absolute;
+  top: 80%;
+}
+
+.solution-body .detail-container .lava-btn {
+  font-family: "ff-good-web-pro", Arial, sans-serif;
+  height: 37px;
+  width: 135px;
+  border: none;
+  background-color: #FF3B00;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;	
+  line-height: 17px;
+  text-transform: uppercase;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.solution-body .detail-container .secondary-btn {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-family: "ff-good-web-pro", Arial, sans-serif;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

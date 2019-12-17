@@ -3,8 +3,21 @@ import React from 'react'
 export default class Solutions extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      singleSolution: false,
+      solution: null
+    }
+
+    this.handleSelect = this.handleSelect.bind(this)
   }
 
+  handleSelect(solution) {
+    this.setState({
+      singleSolution: true,
+      solution
+    })
+  }
 
   render() {
     const { question, products } = this.props.data
@@ -15,13 +28,16 @@ export default class Solutions extends React.Component {
           <span className='question-number'>{`0${this.props.questionNumber}`}</span>
           <h1>{question}</h1>
         </div>
-        <ul className='solutions'>
-          {products.map((product) => (
-
-            <SolutionCard key={product.name} product={product} />
-
-          ))}
-        </ul>
+        {
+          this.state.singleSolution ?
+            <Solution solution={this.state.solution} />
+            :
+            <ul className='solutions'>
+              {products.map((product) => (
+                <SolutionCard key={product.name} solution={product} handleSelect={this.handleSelect} />
+              ))}
+            </ul>
+        }
       </React.Fragment>
     )
   }
@@ -52,7 +68,7 @@ class SolutionCard extends React.Component {
   }
 
   render() {
-    const { product } = this.props
+    const { solution, handleSelect } = this.props
 
     return (
       <li
@@ -64,27 +80,56 @@ class SolutionCard extends React.Component {
         onBlur={this.handleMouseLeave}
       >
 
-        {product.recommended && (
+        {solution.recommended && (
           <div className='recommended'>
             <p>Recommended</p>
           </div>
         )}
-        <img src={product.imageUrl} />
-        <h3 className='solution-name'>{product.name}</h3>
-        <p className='solution-price'>{product.price}</p>
+        <img src={solution.imageUrl} alt={solution.name} />
+        <h3 className='solution-name'>{solution.name}</h3>
+        <p className='solution-price'>{solution.price}</p>
         <div className={this.state.hovering ? 'solution-slider' : 'solution-slider close'} >
-          <h3>{product.name}</h3>
+          <h3>{solution.name}</h3>
           <a className='slider-compare' href='#'>Compare</a>
-          <p className='slider-price'>{product.price}</p>
-          <p className='slider-rating'>{product.bvRating}</p>
-          <p className='slider-descriptor'>{product.descriptor}</p>
-          <p className='slider-description'>{product.description}</p>
+          <p className='slider-price'>{solution.price}</p>
+          <p className='slider-rating'>{solution.bvRating}</p>
+          <p className='slider-descriptor'>{solution.descriptor}</p>
+          <p className='slider-description'>{solution.description}</p>
           <div className='slider-btns'>
-            <button className='lava-btn'>Select</button>
+            <button className='lava-btn' onClick={() => handleSelect(solution)}>Select</button>
             <a className='slider-ds' href='#'>Data Sheet</a>
           </div>
         </div>
       </li>
+    )
+  }
+}
+
+class Solution extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    const { solution } = this.props
+    return (
+      <div className='solution-body'>
+        <div className='img-container'>
+          <img src={solution.imageUrl} alt={solution.name} />
+        </div>
+        <div className='detail-container'>
+          <h3 className='solution-name'>{solution.name}</h3>
+          <p className='solution-price'>{solution.price}</p>
+          <p className='solution-rating'>{solution.bvRating}</p>
+          <p className='solution-descriptor'>{solution.descriptor}</p>
+          <p className='solution-description'>{solution.description}</p>
+          <div className='btn-group'>
+            <button className='lava-btn'>Learn More</button>
+            <button className='secondary-btn'>Buy Now</button>
+            <button className='secondary-btn'>Contact Sales</button>
+          </div>
+        </div>
+      </div>
     )
   }
 }

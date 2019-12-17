@@ -5,7 +5,7 @@
   "answers": [
     {
       "answer": "personal wearable communications",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non vestibulum velit. Proin et nisl bibendum dui mattis varius ut.",
+      "description": "Personal devices are meant to be used by one person. Whether you're an entrepreneur looking for a better way to communicate, or a member of a large organization looking for a unique solution to your personal communications challenges, we've got a wide range of headsets, speakerphones, and desk phones.",
       "imageUrl": "/app/img/personal-wearable/personal-wearable-solution.png",
       "question": "What type on environment will you use it in?",
       "nodeDepth": 2,
@@ -316,17 +316,17 @@
     },
     {
       "answer": "personal desktop communications",
-      "description": "Aenean aliquam, arcu id egestas laoreet, tellus metus volutpat turpis, a vestibulum lacus lorem placerat quam.",
+      "description": "Personal devices are meant to be used by one person. Whether you're an entrepreneur looking for a better way to communicate, or a member of a large organization looking for a unique solution to your personal communications challenges, we've got a wide range of headsets, speakerphones, and desk phones.",
       "imageUrl": "/app/img/personal-desktop/personal-desktop-solution.png"
     },
     {
       "answer": "group audio communications",
-      "description": "Nulla nec tincidunt ante. Quisque a orci sit amet lorem auctor commodo. Vivamus tincidunt sem eu lacinia imperdiet.",
+      "description": "Personal devices are meant to be used by one person. Whether you're an entrepreneur looking for a better way to communicate, or a member of a large organization looking for a unique solution to your personal communications challenges, we've got a wide range of headsets, speakerphones, and desk phones.",
       "imageUrl": "/app/img/group-audio/group-audio-solution.png"
     },
     {
       "answer": "group video communications",
-      "description": "Quisque feugiat nulla id mauris luctus, non pellentesque ex tincidunt. Nunc hendrerit arcu felis, vitae consequat nunc tempor ac.",
+      "description": "Personal devices are meant to be used by one person. Whether you're an entrepreneur looking for a better way to communicate, or a member of a large organization looking for a unique solution to your personal communications challenges, we've got a wide range of headsets, speakerphones, and desk phones.",
       "imageUrl": "/app/img/group-video/group-video-solution.png"
     }
   ]
